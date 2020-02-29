@@ -3,13 +3,20 @@ from PIL import Image
 import requests
 from io import BytesIO
 from selenium import webdriver
+import instabot
+import random
+import os
 
 def get_random_image():
-    response = requests.get('https://source.unsplash.com/random')
+    res=random.randint(32,108)
+    res*=10
+    print(res)
+    link=f'https://source.unsplash.com/random/{res}x{res}'
+    response = requests.get(link)
     img = Image.open(BytesIO(response.content))
     img.save('post.jpg')
     print("Image Fatched !")
-
+        
 def get_random_caption():
     driver=webdriver.Chrome()
     driver.get("https://sassycaptions.com/generator/")
@@ -17,12 +24,15 @@ def get_random_caption():
     button.click()
     caption=driver.find_element_by_id('content')
     print("Caption Fatched !")
-    return caption.text
-    
+    return caption.text    
+
 def post(caption,username="",password=""):
-    pass
+    caption+="#python #bot #programming #random #code"
+    bot=instabot.Bot()
+    bot.login(username=username,password=password)
+    bot.upload_photo('post.jpg', caption=caption)
     
 if __name__ == "__main__":
     get_random_image()
     caption=get_random_caption()
-    post(caption,user="insta_bot_1729",passw="********")
+    post(caption,username="insta_bot_1729",password="XXX")
