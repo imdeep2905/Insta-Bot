@@ -1,7 +1,7 @@
 # insta Bot
 
 # Introduction
-This is a fun little project created in python. It will fetch random image from [Unsplash](https://source.unsplash.com/) and random caption from [sassycaptions](https://sassycaptions.com/generator/). Then it will post it on instagram using [Instabot](https://github.com/instagrambot/instabot).
+This is a fun little project created in python. It will fetch random image from [Unsplash](https://source.unsplash.com/) and random caption from [randomtextgenerator](https://randomtextgenerator.com/). Then it will post it on instagram using [Instabot](https://github.com/instagrambot/instabot).
 
 # How to run 
 
