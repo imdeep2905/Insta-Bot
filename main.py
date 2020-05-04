@@ -23,13 +23,13 @@ def get_random_caption():
     caption = driver.find_element_by_id('generatedtext')
     captions = caption.text.split('.')
     print("Caption Fatched !")
-    return captions[0]+'.' 
+    return captions[0] + '. '+ f'#{captions[1].split()[0]} ' + f'#{captions[1].split()[1]} ' + f'#{captions[1].split()[2]}' 
 
 def post(caption,username="",password=""):
-    caption+="#python #bot #programming #random #code"
+    caption+=" #bot #random"
     bot=instabot.Bot()
     bot.login(username=username,password=password)
-    bot.upload_photo('post.jpg', caption=caption)
+    bot.upload_photo('C:\\Users\\Deep Raval\\Desktop\\Projects\\Insta-Bot\\post.jpg', caption=caption)
     
 if __name__ == "__main__":
     get_random_image()
